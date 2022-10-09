@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table & Form</title>
+</head>
+<body>
+    <h1>1. Table</h1>
+    <table border="1" width="40%">
+        <caption><strong>Price of Fruit</strong></caption>
+        <thead>
+            <tr>
+                <th>Fruits</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Apple</td>
+                <td>$0.25</td>
+            </tr>
+            <tr>
+                <td>Orange</td>
+                <td>$0.50</td>
+            </tr>
+            <tr>
+                <td>Banana</td>
+                <td>$1.00</td>
+            </tr>
+            <tr>
+                <td>Pineapple</td>
+                <td>$2.00</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Total</th>
+                <th>$3.75</th>
+            </tr>
+        </tfoot>
+    </table>
+    <h1>2. Table</h1>
+    <table border="1" width="40%">
+        <caption>More Complex Table</caption>
+        <colgroup>
+            <col align="right" span="1" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="2">
+                    <img src="OIP.jfif" widht="205" height="167" alt="Camel">
+                </th>
+                <th colspan="4" valign="top">
+                    <h1>Camelid comparison</h1><br />
+                    <p>Approximate as of 8/99</p>
+                </th>
+            </tr>
+            <tr valing="bottom">
+                <th># of Humps</th>
+                <th>Indigenous region</th>
+                <th>Spits?</th>
+                <th>Produces Wool?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Camels (bactrian)</th>
+                <td>2</td>
+                <td>Africa/Asia</td>
+                <td rowspan="2">Llama</td>
+                <td rowspan="2">Llama</td>
+            </tr>
+            <tr>
+                <td>Llamas</td>
+                <td>1</td>
+                <td>Andes Mountain</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Forms</h1>
+    <form>
+        <p>
+            <input type = "hidden" name = "recipient"
+            value = "deitel@deitel.com" />
+            <input type = "hidden" name = "subject"
+            value = "Feedback Form" />
+            <input type = "hidden" name = "redirect"
+            value = "main.html" />
+        </p>
+        <p>
+            <label>Name:
+            <input name = "name" type = "text" size = "25"
+            maxlength = "30" />
+            </label>
+        </p>
+        <p><label>Comments:<br />
+            <textarea name = "comments" rows = "4" cols = "36" placeholder="Enter your comments here."></textarea>
+        </label></p>
+        <p>
+            <strong>Things you liked:</strong><br /> 
+            <label>Site design
+                <input name = "thingsliked" type = "checkbox"
+                value = "Design" /></label> 
+                <label>Links
+                <input name = "thingsliked" type = "checkbox"
+                value = "Links" /></label> 
+                <label>Ease of use
+                    <input name = "thingsliked" type = "checkbox"
+                    value = "Ease" /></label> 
+                    <label>Images 
+                        <input name = "thingsliked" type = "checkbox" value="Images"></label>
+                        <label>Source Code
+                            <input name = "thingsliked" type = "checkbox" value="Code"></label>
+                        </p>
+        <p>Where did you know me<br/>
+            <label>Website<input type="radio"></label>
+            <label>LinkedIn<input type="radio"></label>
+            <label>Friends<input type="radio"></label>
+            <label>Others<input type="radio"></label>
+        </p>
+        <p>Rate
+            <select>
+                <option selected="selected">Amazing</option>
+                <option>1</option>
+                <option>Awful</option>
+            </select>
+        </p>
+        <p>
+            <input type = "submit" value =
+            "Submit Your Entries" />
+            <input type = "reset" value =
+            "Clear Your Entries" />
+        </p>
+                        
+    </form>
+                    
+                    
+                    
+
+    <h1>Task</h1>
+    <table border="1" width="40%">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+            </tr>
+        </thead>
+        <tbody style="text-align: center;">
+            <tr>
+                <td>Morning</td>
+                <td>Exercise</td>
+                <td rowspan="2">Study</td>
+                <td rowspan="3">Study</td>
+                <td colspan="2">Exercise</td>
+                <td colspan="2" rowspan="3">Take A Rest</td>                
+            </tr>
+            <tr>
+                <td>Afternoon</td>
+                <td>Study</td>
+                <td>Study</td>
+                <td rowspan="2">Study</td>
+            </tr>
+            <tr>
+                <td>Evening</td>
+                <td>Sleeping</td>
+                <td>Sleeping</td>
+                <td>Sleeping</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
