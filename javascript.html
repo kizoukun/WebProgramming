@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        document.writeln('<h1>Welcome to JavaScript Programming</h1>')
+    </script>
+    <style>
+        #content {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <button type="button" id="alert" onclick="showAlert()">Alert</button>
+    <button type="button" id="prompt" onclick="showPrompt()">Prompt</button>
+    <button type="button" id="table" onclick="showTable()">Table</button>
+    <button type="button" id="average" onclick="showAverage()">Average</button>
+    <button type="button" id="whileLoopFont" onclick="whileLoopFont()">whileLoopFont</button>
+    <button type="button" id="summing" onclick="summing()">Summing</button>
+    <button type="button" id="CalculatingCompoundInterest" onclick="CalculatingCompoundInterest()">Calculating Compound Interest</button>
+    <button type="button" id="breakLoop" onclick="breakLoop()">Break Loop</button>
+    <button type="button" id="continueLoop" onclick="continueLoop()">Continue Loop</button>
+    <div id="content">
+
+    </div>
+</body>
+    <script>
+        const content = document.getElementById("content");
+        function showAlert() {
+            window.alert("This an alert");
+        }
+        function showPrompt() {
+            var firstNumber, secondNumber, number1, number2;
+            while(isNaN(firstNumber)) {
+                firstNumber = window.prompt("Input an number");
+            }
+            while(isNaN(secondNumber)) {
+                secondNumber = window.prompt("Input second number");
+            }
+            var totalNumber = parseInt(firstNumber) + parseInt(secondNumber);
+            content.innerHTML = totalNumber;
+        }
+        function showTable() {
+            let showContent = "";
+            var first = window.prompt("Enter fist integer", "0");
+            var second = window.prompt("Enter second integer", "0");
+            var number1 = parseInt(first);
+            var number2 = parseInt(second);
+            showContent += "<h1>Comparison Result </h1>";
+            showContent += "<table border=\"1\" width=\"100%\"";
+            if(number1 == number2) {
+                showContent += "<tr><td>" + number1 + " == " + number2 + "</td></tr>"
+            }
+            if(number1 != number2) {
+                showContent += "<tr><td>" + number1 +  " != " + number2 + "</td></tr>"
+            }
+            if(number1 < number2) {
+                showContent += "<tr><td>" + number1 +  " < " + number2 + "</td></tr>"
+            }
+            if(number1 > number2) {
+                showContent += "<tr><td>" + number1 +  " > " + number2 + "</td></tr>"
+            }
+            if(number1 <= number2) {
+                showContent += "<tr><td>" + number1 + " <= " + number2 + "</td></tr>";
+            }
+            if(number1 >= number2) {
+                showContent += "<tr><td>" + number1 +  ">=" + number2 + "</td></tr>";
+            }
+            showContent += "</table>"
+            content.innerHTML = showContent;
+        }
+        function showAverage() {
+            var total = 0;
+            var gradeCounter = 0;
+            var grade = window.prompt("Enter Integer Grade, -1 to quit", "0");
+            var gradeValue = parseInt(grade);
+            var total = 0;
+            while(gradeValue != -1) {
+                total += gradeValue;
+                gradeCounter++;
+                grade = window.prompt("Enter Integer Grade, -1 to quit", "0");
+                gradeValue = parseInt(grade);
+            }
+            if(gradeCounter != 0) {
+                var average = total / gradeCounter
+                content.innerHTML = "<h1>Class Average is " + average + "</h1>" 
+            } else {
+                content.innerHTML = "<h1>No Grade were entered</h1>"
+            }
+        }
+        function whileLoopFont() {
+            var showContent = "";
+            var counter = 1;
+            while(counter <= 7) {
+                showContent += "<p style=\"font-size: " + counter + "ex\"> Font Size: " + counter + "</p>";
+                ++counter;
+            }
+            content.innerHTML = showContent
+        }
+        function summing() {
+            var sum = 0;
+            for(var number = 2; number <= 100; number +=2 )
+                sum += number;
+            content.innerHTML = "Sum of even number is " + sum;
+        }
+        function CalculatingCompoundInterest() {
+            var showContent = "";
+            var amount, principal = "10000000.0", rate = ".05";
+            showContent += "<table border='1' width='100%'>";
+            showContent += "<thead><tr><th>Year</th><th>Amount on Deposit</th></tr></thead>";
+
+            console.log(showContent);
+            for(var year = 1; year <= 25; year++) {
+                amount = principal * Math.pow(1.0 + rate, year);
+                showContent += "<tbody><tr><td>" + year + "</td><td>" + (Math.round(amount * 100) / 100).toLocaleString() + "</td></tr>";
+            }
+            showContent += "</tbody></table>";
+            content.innerHTML = showContent;
+            
+        }
+        function breakLoop() {
+            var showContent = "";
+            for(var count = 1; count <= 10; count++) {
+                if(count == 5)
+                    break;
+                showContent += "Count is: " + count + "<br>";
+            }
+            showContent += "Broke out of loop at count " + count + "<br>";
+            content.innerHTML = showContent;
+        }
+        function continueLoop() {
+            var showContent = "";
+            for(var count = 1; count <= 10; count++) {
+                if(count == 5)
+                    continue;
+                showContent += "Count is: " + count + "<br>";
+            }
+            content.innerHTML = showContent;
+        }
+    </script>
+</html>
